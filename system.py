@@ -1,4 +1,4 @@
-import os, sys, time
+import os, sys, time, subprocess
 try:
     from colorama import init, Fore
     init(autoreset=True)
@@ -19,6 +19,7 @@ drv/ConnectOS>""")
 calc: калькулятор
 info: информация о системе
 md и rd: создать и удалить папки
+vbs: проверка VBScript (ТОЛЬКО ДЛЯ WINDOWS)
 """)
         if comma=='calc':
             try:
@@ -45,4 +46,7 @@ md и rd: создать и удалить папки
             print("""ConnectOS 1.0 (code 0)
 January 5, 2025
 by uid3333 (github)""")
+        if comma=='vbs':
+            subprocess.run(["cscript", "test.vbs"], check=True)
+
 systema()
